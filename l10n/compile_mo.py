@@ -19,7 +19,7 @@ def build_mo_files():
         shutil.rmtree(locale_dir)
     os.mkdir(locale_dir)
 
-    available_langs = os.listdir(po_dir)
+    available_langs = sorted(os.listdir(po_dir))
     available_langs = filter(lambda file: file.endswith('.po'), available_langs)
     available_langs = map(lambda file: file[:-3], available_langs)
 
